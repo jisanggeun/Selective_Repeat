@@ -1,2 +1,30 @@
 # Selective_Repeat
-Selective Repeat in Computer Network
+Selective Repeat Assignment in Computer Network class 2023 
+
+## 📡 Selective Repeat
+
+
+### 📘 Overview
+
+
+---
+
+### 📤 1. Output
+<img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
+
+
+---
+
+### 📥 2. Input
+
+
+---
+
+### 📨 3. Timer Interrupt
+
+
+---
+
+## 📊 Results
+<img width="3881" height="2261" alt="SR_result1" src="https://github.com/user-attachments/assets/51ff992e-17cc-420c-8dd4-b6596b87178a" />
+<img width="4307" height="2197" alt="SR_result2" src="https://github.com/user-attachments/assets/6badd1e1-5d49-4b82-bc36-c110b4dc7b98" />
