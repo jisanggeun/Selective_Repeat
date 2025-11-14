@@ -10,6 +10,21 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📤 1. Output
+- Compare sequence state with window boundary:
+  - A.next_seqnum
+  - A.send_base + window_size
+- Determine action:
+  - InWindow: build and send packet
+  - OutOfWindow: skip and print "Out of Window"
+- If InWindow:
+  - Set seqnum and acknum
+  - Copy payload into packet
+  - Compute checksum
+- Start transmission:
+  - Send packet to layer3
+  - Start timer for this seqnum
+  - Mark timer active
+  - Increment A.next_seqnum
 <img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
 
 
