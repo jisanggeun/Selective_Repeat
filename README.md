@@ -25,8 +25,6 @@ Selective Repeat Assignment in Computer Network class 2023
   - Start timer for this seqnum
   - Mark timer active
   - Increment A.next_seqnum
-<img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
-
 
 ---
 
@@ -39,6 +37,14 @@ Selective Repeat Assignment in Computer Network class 2023
 
 
 ---
+
+## 📦 Structure
+- `Output`
+<img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
+
+- `Input`
+
+- `Timer Interrupt`
 
 ## 📊 Results
 <img width="3881" height="2261" alt="SR_result1" src="https://github.com/user-attachments/assets/51ff992e-17cc-420c-8dd4-b6596b87178a" />
