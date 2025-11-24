@@ -2,7 +2,7 @@
 Selective Repeat Assignment in Computer Network class 2023 
 
 ## 📡 Selective Repeat
-
+![SR_FSM](https://github.com/user-attachments/assets/e85c50db-c387-4fd3-b0c5-ef175b84dacb)
 
 ### 📘 Overview
 Implement Bidirectional Selective Repeat with piggybacking on top of a Go-Back-N (GBN) simulation
