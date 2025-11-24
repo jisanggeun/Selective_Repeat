@@ -5,7 +5,7 @@ Selective Repeat Assignment in Computer Network class 2023
 
 
 ### 📘 Overview
-
+Implement Bidirectional Selective Repeat with piggybacking on top of a Go-Back-N (GBN) simulation
 
 ---
 
