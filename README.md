@@ -10,17 +10,17 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📤 1. Output
-**- Compare sequence state with window boundary:**
+- **Compare sequence state with window boundary:**
   - A.next_seqnum
   - A.send_base + window_size
-**- Determine action:**
+- **Determine action:**
   - InWindow: build and send packet
   - OutOfWindow: skip and print "Out of Window"
-**- If InWindow:**
+- **If InWindow:**
   - Set seqnum and acknum
   - Copy payload into packet
   - Compute checksum
-**- Start transmission:**
+- **Start transmission:**
   - Send packet to layer3
   - Start timer for this seqnum
   - Mark timer active
@@ -29,36 +29,36 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📥 2. Input
-**- Checksum Verification**
+- **Checksum Verification**
   - Compare the checksum in the receive packet with the calculated checksum
   - Equal: packet is not corrupted
   - Not Equal: packet is corrupted
-**- Deliver Payload**
+- **Deliver Payload**
   - Packet is Valid: send the payload to layer 5 using tolayer5
-**- Ack handling**
+- **Ack handling**
   - Set ack_num - packet.seqnum: the received sequence number becomes the ACK.
   - ACK is not a duplicate:
     - Stop the timer for that ACK
     - Reset the timer array
     - Update the base array for sliding window management
-**- Sliding Window Update**
+- **Sliding Window Update**
   - send_base == packet.acknum:
     - Loop for window size:
       - Increment send_base
       - If the sequence is broken, stop the loop
     - This moves the send base for all consecutive ACKed packets
-**- Corrupted Packet Handling**
+- **Corrupted Packet Handling**
   - If checksums do not match, ignore the packet
   - The timer will handle timeout later
     
 ---
 
 ### 📨 3. Timer Interrupt
-**- Retransmission on Timeout**
+- **Retransmission on Timeout**
   - Send the packet again to B using tolayer3
-**- Restart Timer**
+- **Restart Timer**
   - Restart the timer for the retransmitted packet with starttimer
-**- Logging**
+- **Logging**
   - Print information about the retransmitted packet: ACK number, seq number and payload
 
 ---
