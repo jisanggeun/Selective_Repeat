@@ -10,17 +10,17 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📤 1. Output
-- Compare sequence state with window boundary:
+**- Compare sequence state with window boundary:**
   - A.next_seqnum
   - A.send_base + window_size
-- Determine action:
+**- Determine action:**
   - InWindow: build and send packet
   - OutOfWindow: skip and print "Out of Window"
-- If InWindow:
+**- If InWindow:**
   - Set seqnum and acknum
   - Copy payload into packet
   - Compute checksum
-- Start transmission:
+**- Start transmission:**
   - Send packet to layer3
   - Start timer for this seqnum
   - Mark timer active
@@ -29,32 +29,37 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📥 2. Input
-- Checksum Verification
+**- Checksum Verification**
   - Compare the checksum in the receive packet with the calculated checksum
   - Equal: packet is not corrupted
   - Not Equal: packet is corrupted
-- Deliver Payload
+**- Deliver Payload**
   - Packet is Valid: send the payload to layer 5 using tolayer5
-- Ack handling
+**- Ack handling**
   - Set ack_num - packet.seqnum: the received sequence number becomes the ACK.
   - ACK is not a duplicate:
     - Stop the timer for that ACK
     - Reset the timer array
     - Update the base array for sliding window management
-- Sliding Window Update
+**- Sliding Window Update**
   - send_base == packet.acknum:
     - Loop for window size:
       - Increment send_base
       - If the sequence is broken, stop the loop
     - This moves the send base for all consecutive ACKed packets
-- Corrupted Packet Handling
+**- Corrupted Packet Handling**
   - If checksums do not match, ignore the packet
   - The timer will handle timeout later
     
 ---
 
 ### 📨 3. Timer Interrupt
-
+**- Retransmission on Timeout**
+  - Send the packet again to B using tolayer3
+**- Restart Timer**
+  - Restart the timer for the retransmitted packet with starttimer
+**- Logging**
+  - Print information about the retransmitted packet: ACK number, seq number and payload
 
 ---
 
@@ -66,6 +71,9 @@ Selective Repeat Assignment in Computer Network class 2023
 <img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/97489a9a-c953-408c-885e-7fc194f8584c" />
 
 - `Timer Interrupt`
+<img width="477" height="944" alt="SR_interrupt" src="https://github.com/user-attachments/assets/33b9fa4a-7807-4162-90f0-3ca2f26536d0" />
+
+
 
 ## 📊 Results
 <img width="3881" height="2261" alt="SR_result1" src="https://github.com/user-attachments/assets/51ff992e-17cc-420c-8dd4-b6596b87178a" />
