@@ -68,7 +68,7 @@ Selective Repeat Assignment in Computer Network class 2023
 <img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
 
 - `Input`
-<img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/97489a9a-c953-408c-885e-7fc194f8584c" />
+<img width="2111" height="4215" alt="SR_input" src="https://github.com/user-attachments/assets/d209192e-eb72-47eb-bb2f-6f5331149383" />
 
 - `Timer Interrupt`
 <img width="477" height="944" alt="SR_interrupt" src="https://github.com/user-attachments/assets/33b9fa4a-7807-4162-90f0-3ca2f26536d0" />
