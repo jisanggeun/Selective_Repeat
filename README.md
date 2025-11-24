@@ -29,8 +29,28 @@ Selective Repeat Assignment in Computer Network class 2023
 ---
 
 ### 📥 2. Input
-
-
+- Checksum Verification
+  - Compare the checksum in the receive packet with the calculated checksum
+  - Equal: packet is not corrupted
+  - Not Equal: packet is corrupted
+- Deliver Payload
+  - Packet is Valid: send the payload to layer 5 using tolayer5
+- Ack handling
+  - Set ack_num - packet.seqnum: the received sequence number becomes the ACK.
+  - ACK is not a duplicate:
+    - Stop the timer for that ACK
+    - Reset the timer array
+    - Update the base array for sliding window management
+- Sliding Window Update
+  - send_base == packet.acknum:
+    - Loop for window size:
+      - Increment send_base
+      - If the sequence is broken, stop the loop
+    - This moves the send base for all consecutive ACKed packets
+- Corrupted Packet Handling
+  - If checksums do not match, ignore the packet
+  - The timer will handle timeout later
+    
 ---
 
 ### 📨 3. Timer Interrupt
@@ -43,6 +63,7 @@ Selective Repeat Assignment in Computer Network class 2023
 <img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/6ba935e5-82ea-432c-9813-a3b1e740033c" />
 
 - `Input`
+<img width="2206" height="3105" alt="SR_output" src="https://github.com/user-attachments/assets/97489a9a-c953-408c-885e-7fc194f8584c" />
 
 - `Timer Interrupt`
 
